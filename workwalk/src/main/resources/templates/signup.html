@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>WorkWalk</title>
+</head>
+
+<body>
+<h2> 회원가입 페이지 </h2>
+<br/>
+<form th:action="@{/signup}" th:object="${user}" method="POST">
+    ID : <input type="text" th:field="*{memberId}"> <br>
+    password : <input type="password" th:field="*{password}"> <br>
+    <button type="submit">Join</button>
+</form> <br>
+</body>
+</html>
