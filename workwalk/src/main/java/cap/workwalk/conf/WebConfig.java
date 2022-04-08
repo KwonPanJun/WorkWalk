@@ -11,13 +11,12 @@ public class WebConfig implements WebMvcConfigurer
 {
     @Override
     public void addViewControllers(ViewControllerRegistry registry)   {
-        registry.addViewController("/").setViewName("home");
+        registry.addViewController("/").setViewName("index");
         registry.addViewController("/home").setViewName("home");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/admin/home").setViewName("adminhome");
         registry.addViewController("/accessDenied").setViewName("403");
         //registry.addViewController("/signup").setViewName("signup");
-        registry.addViewController("/testing").setViewName("testing");
     }
 
     @Bean

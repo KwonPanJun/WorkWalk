@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -30,27 +31,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(customUserService).passwordEncoder(passwordEncoder());
     }
 
-    //접근 권한을 체크할 필요X
-    private static final String[] PUBLIC_MATCHERS = {
-            "/css/**",
-            "/js/**",
-            "/images/**",
-            "/webjars/**",
-            "/about/**",
-            "/contact/**",
-            "/error/**/*",
-            "/console/**"
-    };
+    @Override
+    public void configure(WebSecurity web) {
+        web.ignoring().antMatchers("/css/**","/js/**","/img/**");
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                   .antMatchers(PUBLIC_MATCHERS).permitAll()   // 누구나 접근 허용
-                   .antMatchers("/login", "/home", "/", "/signup","/testing").permitAll()
-                  //.antMatchers("/").hasRole("USER")   // USER & ADMIN 접근 허용
-                  .antMatchers("/admin/**").hasRole("ADMIN")  // ADMIN 접근 허용
-                  .anyRequest().authenticated()   // 나머지 요청들 종류에 상관없이 권한이 있어야 접근 허용
+        http.authorizeRequests()
+                .antMatchers("/login", "/home", "/", "/signup").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")  // ADMIN 접근 허용
+                .anyRequest().authenticated()   // 나머지 요청들 종류에 상관없이 권한이 있어야 접근 허용
 
                 .and()
                     .formLogin()
