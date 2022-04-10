@@ -1,5 +1,6 @@
 package cap.workwalk.controller;
 
+import cap.workwalk.entity.Pet;
 import cap.workwalk.entity.Role;
 import cap.workwalk.entity.User;
 import cap.workwalk.service.CustomUserService;
@@ -20,6 +21,7 @@ public class UserController {
     @GetMapping("/signup")
     public String signUp(Model model) {
         model.addAttribute("user", new User());
+        model.addAttribute("pet", new Pet());
         return "signup";
     }
 

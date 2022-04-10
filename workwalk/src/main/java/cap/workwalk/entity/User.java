@@ -3,6 +3,7 @@ package cap.workwalk.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 @Table(name="users")
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 public class User
 {
@@ -37,7 +39,7 @@ public class User
     //주소
     @Column
     private String address;
-/*
+
     //연락처
     @Column
     private String phone;
@@ -54,11 +56,17 @@ public class User
     @Column
     private String license;
 
+    //경험 여부
+    @Column
+    private String exp;
+
     //프로필사진
     @Column
     private String imgUrl;
 
-*/
+    @Column
+    private int point;
+
     //유저인지 관리자인지 설정 user-role 양방향 many-many 관계
     @ManyToMany(cascade=CascadeType.MERGE)
     @JoinTable(
@@ -66,4 +74,7 @@ public class User
             joinColumns={@JoinColumn(name="USER_ID", referencedColumnName="ID")},
             inverseJoinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")})
     private List<Role> roles;
+
+    //@OneToMany()
+   // private List<Pet> pet;
 }
