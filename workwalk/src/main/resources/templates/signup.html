@@ -10,7 +10,7 @@
 <h2> 회원가입 페이지 </h2>
 <br/>
 <div>
-<form th:action="@{/signup}" th:object="${user}" method="POST">
+<form th:action="@{/users/signup}" th:object="${user}" method="POST">
     ID : <input type="text" th:field="*{memberId}"> <br>
     PASSWORD : <input type="password" th:field="*{password}"><br>
     <hr>유저 정보<hr>

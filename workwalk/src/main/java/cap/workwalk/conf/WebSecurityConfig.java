@@ -33,26 +33,27 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/css/**","/js/**","/img/**");
+        web.ignoring().antMatchers("/css/**","/js/**","/img/**", "/vendor/**");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/login", "/home", "/", "/signup").permitAll()
+                .antMatchers("/home", "/").permitAll()
+                .antMatchers("/users/login", "/users/signup").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")  // ADMIN 접근 허용
                 .anyRequest().authenticated()   // 나머지 요청들 종류에 상관없이 권한이 있어야 접근 허용
 
                 .and()
                     .formLogin()
-                        .loginPage("/login")         //로그인페이지
+                        .loginPage("/users/login")         //로그인페이지
                         .defaultSuccessUrl("/home")  //로그인 성공후 리다이렉트 주소
-                        .failureUrl("/login?error")         //로그인 에러 페이지
+                        .failureUrl("/users/login?error")         //로그인 에러 페이지
                         .permitAll()
                 .and()
                     .logout()                       // 로그아웃 페이지
-                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout")) //로그아웃을 실행할 주소
-                        .logoutSuccessUrl("/login?logout")  //로그아웃 성공시
+                        .logoutRequestMatcher(new AntPathRequestMatcher("/users/logout")) //로그아웃을 실행할 주소
+                        .logoutSuccessUrl("/users/login?logout")  //로그아웃 성공시
                         .invalidateHttpSession(true)//세션 날리기, 세션 전체 삭제
                         .permitAll()
                 .and()

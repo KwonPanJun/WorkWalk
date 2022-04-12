@@ -57,6 +57,7 @@ public class CustomUserService implements UserDetailsService {
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRoles(userRoles);
+
         return userRepository.save(user).getId();
     }
 

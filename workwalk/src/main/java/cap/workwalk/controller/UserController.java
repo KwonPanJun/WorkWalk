@@ -13,15 +13,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/users")
 public class UserController {
 
     @Autowired
     CustomUserService customUserService;
 
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
     @GetMapping("/signup")
     public String signUp(Model model) {
         model.addAttribute("user", new User());
-        model.addAttribute("pet", new Pet());
         return "signup";
     }
 
@@ -33,7 +38,7 @@ public class UserController {
 
             customUserService.signUpUser(user, userRoles);
 
-            return "redirect:/login";
+            return "redirect:/users/login";
     }
 
 }
