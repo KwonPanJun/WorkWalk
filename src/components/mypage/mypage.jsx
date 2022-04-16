@@ -7,7 +7,6 @@ const Mypage = (props) => {
   return (
     <>
       <Header />
-      <Menu />
       mypage
       <Footer />
     </>

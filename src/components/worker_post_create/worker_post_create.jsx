@@ -10,7 +10,6 @@ const WorkerPostCreate = (props) => {
   return (
     <>
       <Header />
-      <Menu />
       worker post create
       <button
         title="chat"

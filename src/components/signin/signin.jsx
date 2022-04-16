@@ -4,7 +4,7 @@ import Header from "../header/header";
 import GoogleLogin from "react-google-login";
 import styles from "./signin.module.css";
 import Menu from "../menu/menu";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signin = (props) => {
   const CLIENT_ID = "3f949de4285a8bb5703831a8fbb03e71";
@@ -16,22 +16,35 @@ const Signin = (props) => {
   return (
     <>
       <Header />
-      <Menu />
+      <div className={styles.signin}>
+        <h1>로그인</h1>
+        <div className={styles.signin__card}>
+          <form className={styles.signinForm} action="../main/main">
+            <input type="text" placeholder="ID 입력" />
+            <input type="password" placeholder="비밀번호 입력" />
+            <button type="submit">로그인</button>
+          </form>
 
-      <form className={styles.signinForm} action="../main/main">
-        <input type="text" />
-        <input type="text" />
-        <button type="submit">signin</button>
-      </form>
+          <div className={styles.link}>
+            <div>
 
-      <h5>signin with kakao</h5>
-      <a href={KAKAO_AUTH_URL} className={styles.kakaoBtn}>
-        <span>카카오계정 로그인</span>
-      </a>
+              <a href={KAKAO_AUTH_URL} className={styles.kakaoBtn}>
+                <img src="/images/kakao_login.png"></img>
+              </a>
+            </div>
+            <div>
+              <Link to="/signup/signup">회원가입</Link>
+            </div>
+          </div>
 
+        </div>
+      </div>
       <Footer />
     </>
   );
 };
 
 export default Signin;
+
+//                <h5>Sign in with kakao</h5>
+//<span>카카오계정 로그인</span>

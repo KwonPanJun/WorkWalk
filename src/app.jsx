@@ -10,6 +10,7 @@ import WorkerPostList from "./components/worker_post_list/worker_post_list";
 import WalkerPostCreate from "./components/walker_post_create/walker_post_create";
 import WorkerPostCreate from "./components/worker_post_create/worker_post_create";
 import Chat from "./components/chat/chat";
+import React, { component }  from "react";
 
 function App() {
   return (

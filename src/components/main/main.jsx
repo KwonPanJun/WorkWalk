@@ -12,7 +12,6 @@ const Main = (props) => {
     <>
       <Header />
       <Menu />
-
       <div className={styles.mainBtn}>
         <button
           className={styles.mainBtnItem}

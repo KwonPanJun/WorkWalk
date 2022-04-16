@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from "./menu.module.css";
 
 const Menu = (props) => {
@@ -7,6 +8,7 @@ const Menu = (props) => {
 
   return (
     <div className={styles.menu}>
+      <div className={styles.inner}>
       <button
         title="back"
         onClick={(event) => {
@@ -17,6 +19,7 @@ const Menu = (props) => {
       </button>
       <button
         title="mypage"
+        class="btn btn-success"
         onClick={(event) => {
           const loc = event.target.title;
           navigate(`/${loc}/${loc}`);
@@ -51,6 +54,7 @@ const Menu = (props) => {
       >
         shop
       </button>
+      </div>
     </div>
   );
 };

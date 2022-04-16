@@ -7,7 +7,6 @@ import styles from "./signup.module.css";
 const Signup = (props) => (
   <>
     <Header />
-    <Menu />
 
     <form action="../signin/signin">
       <fieldset className={styles.signupForm}>

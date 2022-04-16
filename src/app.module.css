@@ -1,7 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+/* 메인 두가지 색 : #F9EBDE // #815854 */
+
 * {
+  font-family: "Nanum Gothic Coding", sans-serif;
   margin: 0;
+  
+}
+body {
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  background-color: #F9EBDE;
+
+  margin: 0 auto;
 }
 
-body {
-  background-color: burlywood;
-}
+
+

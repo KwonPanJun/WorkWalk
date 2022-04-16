@@ -10,7 +10,6 @@ const PostList = (props) => {
   return (
     <>
       <Header />
-      <Menu />
       worker post list
       <button
         title="worker_post_create"

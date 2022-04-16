@@ -10,7 +10,6 @@ const WalkerPostList = (props) => {
   return (
     <>
       <Header />
-      <Menu />
       walker post list
       <button
         title="walker_post_create"

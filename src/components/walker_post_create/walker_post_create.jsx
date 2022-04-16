@@ -10,7 +10,6 @@ const WalkerPostCreate = (props) => {
   return (
     <>
       <Header />
-      <Menu />
       walker post create
       <button
         title="chat"

@@ -7,7 +7,6 @@ const Shop = (props) => {
   return (
     <>
       <Header />
-      <Menu />
       shop
       <Footer />
     </>

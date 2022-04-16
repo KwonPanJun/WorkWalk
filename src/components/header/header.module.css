@@ -2,4 +2,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #815854;
+}
+
+.title .inner {
+  width: 1100px;
+  height: 100px;
+  position : relative;
+}
+
+.title p {
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.title .logo {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  margin : auto;
+}
+
+img {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+.title .menu {
+  display: block;
+  left: 55%;
+  top : 30%;
+  position: absolute;
+  margin : 0 auto;
 }

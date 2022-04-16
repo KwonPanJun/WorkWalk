@@ -1,5 +1,28 @@
 .menu {
+  
+}
+
+.menu .inner {
+  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+}
+.menu .inner button {
+
+}
+
+.menu button {
+  width: 100px;
+  padding: 10px;
+  border: 2px solid #815854;
+  border-radius: 4px;
+  color: #F9EBDE;
+  font-size: 16px;
+  background-color : rgba(0,0,0,0);
+}
+.menu button:hover{
+  color:#815854;
+  background-color: #F9EBDE;
+  cursor : pointer;
 }
