@@ -14,5 +14,19 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- <div id="map" style="width: 500px; height: 400px"></div> -->
+    <!-- <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3f949de4285a8bb5703831a8fbb03e71&libraries=services"
+    ></script>
+    <script>
+      let container = document.getElementById("map");
+      let options = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667),
+        level: 3,
+      };
+
+      let map = new kakao.maps.Map(container, options);
+    </script> -->
   </body>
 </html>

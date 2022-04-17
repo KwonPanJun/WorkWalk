@@ -1,0 +1,67 @@
+.myInfoPage {
+  height: 100%;
+}
+
+.myInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70%;
+}
+
+.myInfo > h1 {
+  color: #f9ebde;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  font-size: 30px;
+  text-align: center;
+}
+
+.myInfoCard {
+  color: #555;
+  background-color: #f9ebde;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.myInfoForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 22px;
+}
+
+.myInfoFormItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.myInfoFormItem > input {
+  border: 1px solid #815854;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.myInfoForm > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.myInfoForm button {
+  width: 100px;
+  padding: 10px;
+  border-radius: 4px;
+  color: #f9ebde;
+  font-size: 16px;
+  background-color: #815854;
+  border: none;
+  cursor: pointer;
+}
