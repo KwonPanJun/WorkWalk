@@ -4,9 +4,11 @@ import Menu from "../menu/menu";
 
 const Header = (props) => {
   return (
-    <header className={styles.title}>
-      <h5>반려견 산책 도우미 매칭 서비스</h5>
-      <h1>Work Walk</h1>
+    <header>
+      <a href="/" className={styles.logo}>
+        <img src="/images/WolkWalk-logo.png"></img>
+      </a>
+      <Menu />
     </header>
   );
 };

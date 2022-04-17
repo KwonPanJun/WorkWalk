@@ -1,5 +1,28 @@
-.menu {
+/* .menu {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  height: 5%;
+} */
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuItem {
+  color: #f9ebde;
+  background-color: #815854;
+  width: 100px;
+  font-size: 16px;
+  padding: 10px;
+  border: #815854;
+  border-radius: 4px;
+}
+
+.menuItem:hover {
+  color: #815854;
+  background-color: #f9ebde;
+  cursor: pointer;
 }

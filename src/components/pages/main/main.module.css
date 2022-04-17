@@ -1,0 +1,22 @@
+/* .mainBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.mainBtnItem {
+  width: 300px;
+  height: 500px;
+  margin: 20px;
+} */
+
+.mainBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.mainBtnItem {
+  width: 50em;
+  height: 50em;
+}
